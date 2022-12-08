@@ -33,12 +33,12 @@ controller:
 
   image:
     ## The image repository of the Ingress controller.
-    repository: <+artifact.metadata.image.split(':')[0]>
+    repository: <+artifact.metadata.image>
     #repository: nginx/nginx-ingress
 
     ## The tag of the Ingress controller image.
     #tag: "1.12.0"
-    tag: <+artifact.metadata.image.split(':')[1]>
+    tag: web-dev-2
 
     ## The pull policy for the Ingress controller image.
     pullPolicy: Always
