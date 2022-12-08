@@ -33,13 +33,16 @@ controller:
 
   image:
     ## The image repository of the Ingress controller.
-    repository: nginx/nginx-ingress
+    repository: ${artifact.metadata.image.split(':')[0]}
+    #repository: nginx/nginx-ingress
+
 
     ## The tag of the Ingress controller image.
-    tag: "1.12.0"
+    #tag: "1.12.0"
+    tag: ${artifact.metadata.image.split(':')[1]}
 
     ## The pull policy for the Ingress controller image.
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
 
   config:
     ## The name of the ConfigMap used by the Ingress controller.
